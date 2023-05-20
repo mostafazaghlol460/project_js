@@ -1,65 +1,52 @@
-// js for slider
-var slideIndex = 1;
-var slides = document.getElementsByClassName("slide");
+//*********************************************************************************************** */
+//new code of slider
+var slider = document.getElementsByClassName("slider")[0];
+var array = [
+  "./img/slide6.jpg",
 
-showSlide(slideIndex);
+  "./img/slide1.jpg",
+  "./img/slide5.jpg",
+  "./img/slide7.jpg"
+];
 
+var currentIndex = 0;
+
+function showSlide(index) {
+  slider.style.backgroundImage = `url(${array[index]})`;
+}
 function nextSlide() {
-  clearTimeout(timer);
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  showSlide(slideIndex);
+  currentIndex = (currentIndex + 1) % array.length;
+  showSlide(currentIndex);
 }
 
 function prevSlide() {
-  clearTimeout(timer);
-  slideIndex--;
-  if (slideIndex < 1) {
-    slideIndex = slides.length;
-  }
-  showSlide(slideIndex);
+  currentIndex = (currentIndex - 1 + array.length) % array.length;
+  showSlide(currentIndex);
+}
+document.querySelector(".next").addEventListener("click", function() {
+  clearInterval(slideInterval); // Clear the automatic slide transition interval
+  nextSlide();
+  slideInterval = setInterval(function() {
+    nextSlide(); // Resume automatic slide transition
+  }, 2000);
+});
+
+document.querySelector(".prev").addEventListener("click", function() {
+  clearInterval(slideInterval); // Clear the automatic slide transition interval
+  prevSlide();
+  slideInterval = setInterval(function() {
+    nextSlide(); // Resume automatic slide transition
+  }, 2000);
+});
+function startSlider() {
+  nextSlide(); // Show the initial slide
+  slideInterval = setInterval(function() {
+    nextSlide(); // Transition to the next slide
+  }, 2000); // Change slide every 2 seconds
 }
 
-function showSlide(n) {
-  let i;
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
+startSlider();
 
-  slides[slideIndex - 1].style.display = "block";
-
-  timer = setTimeout(function() {
-    nextSlide();
-  }, 3000);
-}
-
-document.querySelector(".next").addEventListener("click", nextSlide);
-document.querySelector(".prev").addEventListener("click", prevSlide);
-// this function is called when i click to the button
-// function choiceCatagory() {
-//   // var button = document.querySelector(".button_click");
-
-//   if (button == "catagories1") {
-//     catagories1.classList.remove("Display_none");
-
-//     catagories2.classList.add("Display_none");
-//     catagories3.classList.add("Display_none");
-//     catagories4.classList.add("Display_none");
-//   } else if (button == "catagories2") {
-//     catagories1.classList.add("Display_none");
-//     catagories2.classList.remove("Display_none");
-//     catagories3.classList.add("Display_none");
-//     catagories4.classList.add("Display_none");
-//   }
-// }
 var catagories1 = document.querySelector(".catagories1");
 var catagories2 = document.querySelector(".catagories2");
 var catagories3 = document.querySelector(".catagories3");
@@ -176,3 +163,32 @@ function validateForm() {
     return false;
   }
 }
+// style of cart begin
+const addToCartButtons = document.querySelectorAll(".add-to-cart");
+addToCartButtons.forEach(button => {
+  button.addEventListener("click", function() {
+    const productCard = button.closest(".card");
+    const productPath = productCard
+      .querySelector(".card-img-top")
+      .getAttribute("src");
+    const productName = productCard.querySelector(".h2").textContent;
+    const productSalary = parseFloat(
+      productCard.querySelector(".text-muted.text-right").textContent.slice(1)
+    );
+
+    const productData = {
+      path: productPath,
+      name: productName,
+      salary: productSalary
+    };
+
+    // Retrieve the existing cart data from local storage
+    const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Add the new product data to the cart data
+    cartData.push(productData);
+
+    // Save the updated cart data to local storage
+    localStorage.setItem("cart", JSON.stringify(cartData));
+  });
+});

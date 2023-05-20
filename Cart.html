@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      rel="stylesheet"
+      href="./font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./Css/aos.css" />
+    <link rel="stylesheet" href="./Css/all.min.css" />
+    <link rel="stylesheet" href="./Css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="./Css/cart.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-8 cart">
+          <div class="title">
+            <div class="row">
+              <div class="col">
+                <h4><b>Shopping Cart</b></h4>
+              </div>
+              <div class="total_item col align-self-center text-right text-muted">
+                <span class="total_item-count"></span> items
+              </div>
+            </div>
+          </div>
+          <div class="row border-top border-bottom cart-items">
+            <!-- Dynamic cart items will be inserted here -->
+          </div>
+          <div class="back-to-shop">
+            <a  href="./index.html">&leftarrow;</a
+            ><span class="text-muted">Back to shop</span>
+          </div>
+        </div>
+        <div class="col-md-4 summary">
+          <div>
+            <h5><b>Summary</b></h5>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col" style="padding-left: 0;">ITEMS <span class="summary-items-count"></span></div>
+            <div class="col text-right">&euro; <span class="summary-total-price"></span></div>
+          </div>
+          <form>
+            <p>SHIPPING</p>
+            <select>
+              <option class="text-muted">Standard-Delivery- &euro;5.00</option>
+            </select>
+            <p>GIVE CODE</p>
+            <input id="code" placeholder="Enter your code" />
+          </form>
+          <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+            <div class="col">TOTAL PRICE</div>
+            <div class="col text-right">&euro; <span class="summary-total-price-with-shipping"></span></div>
+          </div>
+          <a href="./index.html">
+          <button  class="btn CHECKOUT">CHECKOUT</button>
+        </a>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="./JS/Cart.js"></script>
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script src="./JS/all.min.js"></script>
+  </body>
+</html>

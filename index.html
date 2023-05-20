@@ -4,66 +4,99 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./Css/aos.css">
+    <link rel="stylesheet" href="./Css/all.min.css" />
+    <link rel="stylesheet" href="./Css/bootstrap.min.css" />
     <link rel="stylesheet" href="./Css/style.css" />
-    <title>Document</title>
+    <title>ShirtStorm Site</title>
   </head>
   <body>
     <!-- the first part  -->
 
     <div class="header">
-      <div class="logo">
-        <a href="index.html"> <h1 id="top_page">ShirtStorm</h1></a>
-      </div>
-      <div class="links">
-        <ul>
-          <li>
-            <a href="index.html"> </i> Home </a>
-          </li>
-          <li><a href="srvices.html">Services </a></li>
-          <li><a href="Shop-Single.html">Featured Product </a></li>
-          <li><a href="Shop-Single1.html">Women Product </a></li>
-
-          <li><a href="contact_us.html">Contact Us </a></li>
-        </ul>
-      </div>
-
-      <div class="icon">
-        <div class="icon2">
-          <a href="index.html"><i class="fa-solid fa-user fa-2x"> </i></a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-gray">
+          <a class="navbar-brand " href="index.html">
+            <h1 id="top_page">ShirtStorm</h1>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="links collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./srvices.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Shop-Single.html">Featured Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Shop-Single1.html">Women Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact_us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="icon1 d-flex align-items-center">
+            <div class="icon2 ">
+              <a href="index.html">
+                <i class="fa-solid fa-user fa-2x"></i>
+              </a>
+            </div>
+            <a href="index.html" class="">
+              <h5>Log In</h5>
+            </a>
+            <div class="icon3">
+              <a href="Cart.html">
+                <i class="fa-solid fa-cart-shopping fa-2x"></i>
+              </a>
+            </div>
         </div>
-        <a href="index.html"><h5>Log In</h5></a>
-        <div class="icon3">
-          <a href="index.html"
-            ><i class="fa-solid fa-cart-shopping fa-2x"></i
-          ></a>
-        </div>
+        </nav>
       </div>
-    </div>
+
+
 
     <!-- the second part  -->
     <div class="slider">
+
         <button class="prev" >&#10094;</button>
         <button class="next" >&#10095;</button>
-        <img src="./img/slide1.jpg" alt="image2" class="slide" />
-        <img src="./img/slide5.jpg" alt="image2" class="slide" />
 
-        <img src="./img/slide6.jpg" alt="image1" class="slide" />
-        <img src="./img/slide7.jpg" alt="image2" class="slide" />
-
+        <div class="jumbotron1 jumbotron-fluid" id="banner">
+            <div class="container text-center  text-md-left">
+               
+                <h1 data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="display-3 text-secondary  font-weight-bold my-5">
+                    A New Way<br>
+                    To Shop Online
+                </h1>
+                <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="lead text-secondary  my-4">
+                    Lorem ipsum dolor sit amet, id nec enim autem oblique, ei dico mentitum duo.
+                    <br> Illum iusto laoreet his te. Lorem partiendo mel ex. Ad vitae admodum voluptatum per.
+                </p>
+                <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="btn my-4 font-weight-bold atlas-cta cta-green">Get Started</a>
+            </div>
+        </div>
 
     </div>
 
-      
-
+      <div class="row text-center m-5">
+            <h2 class="text-center  font-weight-bold d-block mb-3">Check our Product</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, nihil facilis error laboriosam vel voluptate illo perspiciatis aut quae ratione fuga, voluptates omnis optio recusandae. Sint eum temporibus repudiandae nesciunt.</p>
+      </div>
     <!-- the third part  -->
     <div class="container-fluid">
       <div class="buttons mb-5 mt-5 d-flex flex-wrap justify-content-center">
@@ -107,7 +140,7 @@
                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
                                   </p>
                                   <p class="text-muted">Reviews (24)</p>
-                                  <button href="#" class="button col-12"> Add Cart</button>
+                                  <button href="#" class="button add-to-cart col-12"> Add Cart</button>
 
                               </div>
                           </div>
@@ -133,7 +166,7 @@
                                       Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.
                                   </p>
                                   <p class="text-muted">Reviews (48)</p>
-                                  <button href="#" class="button col-12"> Add Cart</button>
+                                  <button href="#" class="button col-12 add-to-cart"> Add Cart</button>
 
                               </div>
                           </div>
@@ -159,7 +192,8 @@
                                       Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.
                                   </p>
                                   <p class="text-muted">Reviews (74)</p>
-                                  <button href="#" class="button col-12"> Add Cart</button>
+                                  <button class="button col-12 add-to-cart" >Add to Cart</button>
+                                  
 
                               </div>
                           </div>
@@ -206,7 +240,7 @@
                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
                                   </p>
                                   <p class="text-muted">Reviews (24)</p>
-                                  <button class="button col-12"> Add Cart</button>
+                                  <button class="button col-12 add-to-cart"> Add Cart</button>
 
                               </div>
                           </div>
@@ -232,7 +266,7 @@
                                       Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.
                                   </p>
                                   <p class="text-muted">Reviews (48)</p>
-                                  <button class="button col-12"> Add Cart</button>
+                                  <button class="button col-12 add-to-cart"> Add Cart</button>
 
                               </div>
                           </div>
@@ -258,7 +292,7 @@
                                       Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.
                                   </p>
                                   <p class="text-muted">Reviews (74)</p>
-                                  <button class="button col-12"> Add Cart</button>
+                                  <button class="button col-12 add-to-cart"> Add Cart</button>
 
                               </div>
                           </div>
@@ -304,7 +338,7 @@
                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
                                   </p>
                                   <p class="text-muted">Reviews (24)</p>
-                                  <button class="button col-12"> Add Cart</button>
+                                  <button class="button col-12 add-to-cart"> Add Cart</button>
 
                               </div>
                           </div>
@@ -330,7 +364,7 @@
                                       Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.
                                   </p>
                                   <p class="text-muted">Reviews (48)</p>
-                                  <button class="button col-12"> Add Cart</button>
+                                  <button class="button col-12 add-to-cart"> Add Cart</button>
 
                               </div>
                           </div>
@@ -356,7 +390,7 @@
                                       Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.
                                   </p>
                                   <p class="text-muted">Reviews (74)</p>
-                                  <button class="button col-12"> Add Cart</button>
+                                  <button class="button col-12 add-to-cart"> Add Cart</button>
 
                               </div>
                           </div>
@@ -400,7 +434,7 @@
                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
                                   </p>
                                   <p class="text-muted">Reviews (24)</p>
-                                  <button class="button col-12"> Add Cart</button>
+                                  <button class="button col-12 add-to-cart"> Add Cart</button>
 
                               </div>
                           </div>
@@ -426,7 +460,7 @@
                                       Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.
                                   </p>
                                   <p class="text-muted">Reviews (48)</p>
-                                  <button class="button col-12"> Add Cart</button>
+                                  <button class="button col-12 add-to-cart"> Add Cart</button>
 
                               </div>
                           </div>
@@ -452,7 +486,7 @@
                                       Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.
                                   </p>
                                   <p class="text-muted">Reviews (74)</p>
-                                  <button class="button col-12"> Add Cart</button>
+                                  <button class="button col-12 add-to-cart"> Add Cart</button>
 
                               </div>
                           </div>
@@ -462,7 +496,79 @@
           </section>
       </div>
     </div>
-    <!-- the last part -->
+<!-- the newest part  -->
+<!-- begin -->
+
+<!-- feature (skew background) -->
+
+<div class="jumbotron jumbotron-fluid feature" id="feature-first">
+    <div class="container my-5">
+        <div class="row justify-content-between text-center text-md-left">
+            <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
+                <h2 class="font-weight-bold">Take a look inside ShirtStorm</h2>
+                <p class="my-4">Te iisque labitur eos, nec sale argumentum scribentur no,
+                    <br> augue disputando in vim. Erat fugit sit at, ius lorem deserunt deterruisset no.</p>
+                <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue">Learn More</a>
+            </div>
+            <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
+                <img src="img/feature-1.png" alt="Take a look inside" class="mx-auto d-block">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- feature (green background) -->
+
+<div class="jumbotron jumbotron-fluid feature" id="feature-last">
+    <div class="container">
+        <div class="row justify-content-between text-center text-md-left">
+            <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 flex-md-last">
+                <h2 class="font-weight-bold">ShirtStorm is Safe and reliable</h2>
+                <p class="my-4">
+                    Duo suas detracto maiestatis ad, commodo lucilius invenire nec ad,
+                    <br> eum et oratio disputationi. Falli lobortis his ad
+                </p>
+                <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue">Learn More</a>
+            </div>
+            <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center flex-md-first">
+                <img src="img/feature-2.png" alt="Safe and reliable" class="mx-auto d-block">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end of part -->
+<div class="container-fluid pt-5">
+        <div class="row px-xl-5 pb-3">
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                    <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                    <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Featured End -->
+
+
+    <!-- the last part of footer  -->
     <div class="footer container-fluid bg-dark text-secondary mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
@@ -531,12 +637,23 @@
             </div>
         </div>
     </div>
+
     <a href="#" class="btn btn-primary back-to-top "><i class="fa fa-angle-double-up"></i></a>
 
     <!-- ***************************************Scripts******************************************************-->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/all.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script src="./JS/all.min.js"></script>
     <script src="./JS/script.js"></script>
+    <script src="./Js/aos.js"></script>
+    <script>
+      AOS.init({
+      });
+    </script>
+
+
+
   </body>
 </html>
