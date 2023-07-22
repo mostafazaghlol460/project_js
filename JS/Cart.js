@@ -43,74 +43,26 @@ document.addEventListener("DOMContentLoaded", function() {
       cartItemsElement.insertAdjacentHTML("beforeend", itemHtml);
     });
 
-    // Add event listeners to minus buttons
-    const minusButtons = document.querySelectorAll(".minus-button");
-    minusButtons.forEach(button => {
-      button.addEventListener("click", function() {
-        const index = button.getAttribute("data-index");
-        const quantityElement = button.nextElementSibling;
-        let quantity = parseInt(quantityElement.textContent);
-        if (quantity > 1) {
-          quantity--;
-          quantityElement.textContent = quantity;
-          itemCount--;
-          totalPrice -= cartData[index].price;
-          updateCart();
-
-          // Update the cart data in local storage
-          cartData[index].quantity = quantity; // Update the quantity for the corresponding product
-          localStorage.setItem("cart", JSON.stringify(cartData));
-        }
-      });
-    });
-
-    // Add event listeners to plus buttons
-    const plusButtons = document.querySelectorAll(".plus-button");
-    plusButtons.forEach(button => {
-      button.addEventListener("click", function() {
-        const index = button.getAttribute("data-index");
-        const quantityElement = button.previousElementSibling;
-        let quantity = parseInt(quantityElement.textContent);
-        quantity++;
-        quantityElement.textContent = quantity;
-        itemCount++;
-        totalPrice += cartData[index].price;
-        updateCart();
-
-        // Update the cart data in local storage
-        cartData[index].quantity = quantity; // Update the quantity for the corresponding product
-        localStorage.setItem("cart", JSON.stringify(cartData));
-      });
-    });
-
     // Add event listeners to close icons
     const closeIcons = document.querySelectorAll(".close");
     closeIcons.forEach(icon => {
       icon.addEventListener("click", function() {
         const index = icon.getAttribute("data-index");
-        const itemRow = icon.parentElement.parentElement;
-        const quantityElement = itemRow.querySelector(".col:nth-child(3) a");
-        const price = parseFloat(
-          itemRow.querySelector(".col:last-child").textContent.split(" ")[1]
-        );
-        const quantity = parseInt(quantityElement.textContent);
-        itemCount -= quantity;
-        totalPrice -= price * quantity;
-        itemRow.remove();
-        updateCart();
-
-        // Remove the product from the cart data in local storage
         cartData.splice(index, 1);
         localStorage.setItem("cart", JSON.stringify(cartData));
+        updateCart();
       });
     });
   }
 
   // Initialize the cart on page load
   updateCart();
-  const checkoutButton = document.querySelector(".CHECKOUT");
+
+  // Add event listener to the "CHECKOUT" button
+  const checkoutButton = document.querySelector(".btn");
   checkoutButton.addEventListener("click", function() {
     // Clear the cart data in local storage
     localStorage.removeItem("cart");
+    updateCart();
   });
 });
